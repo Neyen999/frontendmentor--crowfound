@@ -1,0 +1,554 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Commissioner', sans-serif;
+}
+
+/*---HEADER---*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  height: 300px;
+  padding: 20px 20px 0 20px;
+  background: url(../images/image-hero-mobile.jpg)center center/cover no-repeat;
+}
+
+.header .header__logo {
+  height: 20px;
+  width: 128px;
+}
+
+.header .menu-btn {
+  position: fixed;
+  z-index: 2;
+  right: 20px;
+}
+
+.header .header__nav {
+  display: none;
+  opacity: 0;
+  width: 100%;
+  height: 100vh;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%);
+  position: fixed;
+  z-index: 1;
+  opacity: 1;
+  background-color: #1f1e1e6c;
+  box-shadow: 0px 0px 7px #5e5e5e;
+}
+
+.header .header__nav.open {
+  display: initial;
+  animation-name: menushow;
+  animation-duration: 500ms;
+}
+
+.header .header__nav ul {
+  height: 200px;
+  width: 85%;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 12px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  list-style: none;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.header .header__nav ul li{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.header .header__nav ul li:nth-child(1),
+.header .header__nav ul li:nth-child(2){
+  border-bottom: 1px solid #e6e6e6;
+}
+
+
+/*---MAIN---*/
+
+main {
+  position: relative;
+  padding-top: 200px;
+}
+    /*....CARD1....*/
+.project .back__project {
+  margin: 0 auto;
+  width: 80%;
+  position: absolute;
+  top: -5%;
+  left: 50%;
+  transform: translate(-50%, 20%);
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 0px 7px rgb(129, 129, 129);
+  height: 220px;
+}
+
+.project .back__project .back__logo {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translate(-50%, 10%);
+}
+
+.project .back__project h1 {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 70%;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.project .back__project p {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.project .back__project .back__buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project .back__project .back__buttons button{
+  margin: 0 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.project .back__project .back__buttons button:nth-child(1){
+  height: 40px;
+  width: 150px;
+  padding: 12px 22px;
+  color: white;
+  border-radius: 20px;
+  background-color: hsl(176, 50%, 47%);
+}
+
+.project .back__project .back__buttons button:nth-child(2){
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: url(../images/icon-bookmark.svg) center center/cover no-repeat;
+}
+
+    /*....CARD2....*/
+
+.project .project__info {
+  margin: 0 auto;
+  width: 80%;
+  height: 350px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 0px 7px rgb(129, 129, 129);
+}
+
+.project .project__info .info--container {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.project .project__info .info--container p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #b6b6b6;
+}
+
+.project .project__info .info--container p span:nth-child(1) {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.project .project__info .project__progress {
+  display: flex;
+  justify-content: center;
+}
+
+.project .project__info .project__progress progress {
+  height: 15px;
+  width: 90%;
+}
+
+  /*...ABOUT....*/
+
+.about {
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 90%;
+  padding: 20px 12px;
+  box-shadow: 0px 0px 7px #e6e6e6;
+}
+
+.about .about__headline {
+  text-align: left;
+  margin-bottom: 24px;
+  font-size: 2rem;
+}
+
+.about .about__description p {
+  font-size: 1.4rem;
+  margin-bottom: 24px;
+  color: hsl(0, 0%, 48%);
+}
+
+    /*....MODAL....*/
+
+.modal__container {
+  display: none;
+}
+
+
+.modal__container {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(51, 51, 51, 0.623);
+  position: fixed;
+  top: 0vh;
+}
+
+.modal__container.open {
+  display: initial;
+  animation-name: menushow;
+  animation-duration: 500ms;
+}
+
+.modal__container.open .modal {
+  /* display: initial; */
+  position: fixed;
+  overflow-y: scroll;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 90vh;
+  margin: 0 auto;
+  width: 90%;
+  padding: 24px 12px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0px 0px 7px #e6e6e6;
+}
+
+.modal .modal__headline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.modal p {
+  font-size: 1.4rem;
+  color: hsl(0, 0%, 48%);
+}
+
+.modal .card {
+  position: relative;
+  margin-top: 20px;
+  height: 250px;
+  padding: 16px 16px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 7px rgb(129, 129, 129);
+}
+
+.modal .card.active-card {
+  border: 1px solid hsl(176, 50%, 47%);
+  height: 400px;
+}
+
+.modal .card .card__selection {
+  height: 10%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.modal .card .card__description {
+  height: 30%;
+  display: flex;
+  align-items: center;
+}
+.modal .card .card__description p {
+  font-size: 1.6rem;
+}
+
+.modal .card .card__left {
+  /* bottom: 20px;
+  position: absolute; */
+  height: 20%;
+}
+
+.modal .card label {
+  display: flex;
+  align-items: center;
+}
+
+.modal .card .card__selection input {
+  margin-right: 8px;
+}
+/*PERSONALIZED INPUT*/
+label > input[type="radio"] {
+  display: none;
+}
+
+label > input[type="radio"] + ::before {
+  content: "";
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 8px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color: gray;
+}
+
+label > input[type="radio"]:checked + *::before {
+  background: radial-gradient(teal 0%, teal 40%, transparent 50%, transparent);
+  border-color: teal;
+}
+
+/*------------*/
+
+
+.modal .card .card__selection h3{
+  font-size: 1.4rem;
+}
+
+.modal .card .card__selection h4{
+  font-size: 1.3rem;
+  color: hsl(176, 50%, 47%);
+}
+
+.modal .card.not--available {
+  opacity: .3;
+}
+
+.modal .card.not--available button {
+  opacity: .9;
+  background-color: hsl(0, 0%, 48%);
+}
+
+.card .card__title {
+  margin-bottom: 25px;
+}
+
+.card .card__title h3 {
+  font-size: 1.3rem;
+}
+.card .card__title h4 {
+  color: hsl(176, 50%, 47%);
+  font-size: 1.2rem;
+}
+
+.card .card__description {
+  width: 90%;
+  font-size: 1.4rem;
+  margin-bottom: 24px;
+}
+
+.modal .card .card__left {
+  display: flex;
+  align-items: center;
+}
+
+.modal .card .card__left span:nth-child(1) {
+  margin-right: 5px;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.card button {
+  position: absolute;
+  height: 40px;
+  padding: 12px 16px;
+  left: 20px;
+  bottom: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  border-radius: 20px;
+  background-color: hsl(176, 50%, 47%);
+}
+
+.modal .card .card__send { 
+  height: 20%;
+  padding: 5px;
+}
+
+.modal .card .card__send h3 {
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.modal .card.active-card .card__send .send__buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.modal .card.active-card .card__send {
+  display: block;
+}
+
+.modal .card.active-card .card__send h3 {
+  display: flex;
+  justify-content: center;
+}
+
+.modal .card .card__send {
+  display: none;
+  border-top: 1px solid hsl(0, 0%, 48%);
+}
+
+.modal .card .card__send h3 {
+  display: none;
+}
+
+.modal .card .card__send .send__buttons label {
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 12px;
+  border: 1px solid hsl(0, 0%, 48%);
+  border-radius: 20px;
+  margin: 0 5px;
+}
+
+.modal .card .card__send .send__buttons span {
+  font-size: 1.6rem;
+  color: hsl(0, 0%, 48%);
+}
+
+.modal .card .card__send .send__buttons label input {
+  width: 80px;
+  height: 20px;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 2rem;
+}
+
+.modal .card .card__send .send__buttons button:nth-child(2) {
+  margin: 0 5px;
+  position: initial;
+}
+
+/*---MODAL SUCCESS---*/
+
+.success__modal {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  background-color: rgba(51, 51, 51, 0.575);
+}
+
+.success__modal.success--open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success__container {
+  height: 350px;
+  width: 90%;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.success__container .success__heading {
+  margin-bottom: 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.success__container .success__heading img {
+  width: 60px;
+  margin-bottom: 16px;
+}
+
+.success__container .success__heading h3 {
+  font-size: 1.8rem;
+}
+
+.success__container .success__description {
+  height: 40%;
+  display: flex;
+  align-items: center;
+}
+
+.success__container .success__description p {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  color: hsl(0, 0%, 48%);
+  text-align: center;
+}
+
+.success__container button {
+  outline: none;
+  border: none;  
+  height: 40px;
+  width: 110px;
+  padding: 12px 22px;
+  color: white;
+  border-radius: 20px;
+  background-color: hsl(176, 50%, 47%);
+
+}
+
+/*ANIMATIONS*/
+
+@keyframes menushow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes menuhide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
